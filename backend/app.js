@@ -12,10 +12,6 @@ app.use(cors())
 
 app.use('/auth', UserRoute)
 
-app.get('/', (req, res) => {
-    res.send('Radi');
-});
-
 app.listen(1919, () => {
     console.log(`Radi na portu 1919`)
 })
