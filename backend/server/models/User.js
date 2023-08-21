@@ -24,4 +24,9 @@ UserSchema.pre('save', async function(next) {
 
     this.Password = await bcrypt.hash(this.Password, 12)
 })
+
+UserSchema.methods.ComparePassword_Hashed_NonHashed = async function (hashed) {
+    return await bcrypt.compare(hashed, this.Password) 
+}
+
 module.exports = mongoose.model('User', UserSchema)
