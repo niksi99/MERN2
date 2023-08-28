@@ -4,6 +4,7 @@ const cors = require('cors');
 const MongoDB_Connection = require('./server/config/MongoDB');
 const UserRoute = require('./server/routes/UserRoute')
 const DistanceRoute = require('./server/routes/DistanceRoute')
+const SwimmingStrokesRoute = require('./server/routes/SwimmingStrokesRoute')
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors())
 
 app.use('/auth', UserRoute)
 app.use(DistanceRoute)
+app.use('/strokes', SwimmingStrokesRoute)
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

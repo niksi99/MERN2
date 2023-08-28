@@ -7,25 +7,12 @@ const SwimmingSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    Description: {
-        type: String,
-        required: true,
-    },
-    Distance: {
+    Distances: [{
         type: mongoose.Schema.Types.ObjectId, ref: "Distance"
-    },
+    }],
     ImageUrl: {
         type: String,
-        required: true,
     },
-    RangeOfTIme: {
-        type: Number,
-        required: true,
-    },
-    Swimmer: {
-        type: mongoose.Schema.Types.ObjectId, ref: "User",
-        required: true,
-    }
 })
 
 
